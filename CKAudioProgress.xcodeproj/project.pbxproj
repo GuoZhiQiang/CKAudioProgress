@@ -1,0 +1,617 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BC385655228A9D870042BB9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC385654228A9D870042BB9A /* AppDelegate.m */; };
+		BC385658228A9D870042BB9A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC385657228A9D870042BB9A /* ViewController.m */; };
+		BC38565B228A9D870042BB9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC385659228A9D870042BB9A /* Main.storyboard */; };
+		BC38565D228A9D890042BB9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC38565C228A9D890042BB9A /* Assets.xcassets */; };
+		BC385660228A9D890042BB9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC38565E228A9D890042BB9A /* LaunchScreen.storyboard */; };
+		BC385663228A9D890042BB9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC385662228A9D890042BB9A /* main.m */; };
+		BC38566D228A9D890042BB9A /* CKAudioProgressTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC38566C228A9D890042BB9A /* CKAudioProgressTests.m */; };
+		BC385678228A9D890042BB9A /* CKAudioProgressUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC385677228A9D890042BB9A /* CKAudioProgressUITests.m */; };
+		BC385688228A9E9C0042BB9A /* CKAudioProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC385687228A9E9C0042BB9A /* CKAudioProgressView.m */; };
+		BC38568B228AB0F10042BB9A /* CALayer+CKViewCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = BC38568A228AB0F10042BB9A /* CALayer+CKViewCategory.m */; };
+		BC385691228BBBEC0042BB9A /* audioprogress.gif in Resources */ = {isa = PBXBuildFile; fileRef = BC385690228BBBEC0042BB9A /* audioprogress.gif */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC385669228A9D890042BB9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC385648228A9D870042BB9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC38564F228A9D870042BB9A;
+			remoteInfo = CKAudioProgress;
+		};
+		BC385674228A9D890042BB9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC385648228A9D870042BB9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC38564F228A9D870042BB9A;
+			remoteInfo = CKAudioProgress;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BC385650228A9D870042BB9A /* CKAudioProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CKAudioProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC385653228A9D870042BB9A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BC385654228A9D870042BB9A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BC385656228A9D870042BB9A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BC385657228A9D870042BB9A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BC38565A228A9D870042BB9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BC38565C228A9D890042BB9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC38565F228A9D890042BB9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BC385661228A9D890042BB9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC385662228A9D890042BB9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BC385668228A9D890042BB9A /* CKAudioProgressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CKAudioProgressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC38566C228A9D890042BB9A /* CKAudioProgressTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKAudioProgressTests.m; sourceTree = "<group>"; };
+		BC38566E228A9D890042BB9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC385673228A9D890042BB9A /* CKAudioProgressUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CKAudioProgressUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC385677228A9D890042BB9A /* CKAudioProgressUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKAudioProgressUITests.m; sourceTree = "<group>"; };
+		BC385679228A9D890042BB9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC385686228A9E9C0042BB9A /* CKAudioProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKAudioProgressView.h; sourceTree = "<group>"; };
+		BC385687228A9E9C0042BB9A /* CKAudioProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKAudioProgressView.m; sourceTree = "<group>"; };
+		BC385689228AB0F10042BB9A /* CALayer+CKViewCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+CKViewCategory.h"; sourceTree = "<group>"; };
+		BC38568A228AB0F10042BB9A /* CALayer+CKViewCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+CKViewCategory.m"; sourceTree = "<group>"; };
+		BC385690228BBBEC0042BB9A /* audioprogress.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = audioprogress.gif; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC38564D228A9D870042BB9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC385665228A9D890042BB9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC385670228A9D890042BB9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BC385647228A9D870042BB9A = {
+			isa = PBXGroup;
+			children = (
+				BC385652228A9D870042BB9A /* CKAudioProgress */,
+				BC38566B228A9D890042BB9A /* CKAudioProgressTests */,
+				BC385676228A9D890042BB9A /* CKAudioProgressUITests */,
+				BC385651228A9D870042BB9A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BC385651228A9D870042BB9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC385650228A9D870042BB9A /* CKAudioProgress.app */,
+				BC385668228A9D890042BB9A /* CKAudioProgressTests.xctest */,
+				BC385673228A9D890042BB9A /* CKAudioProgressUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC385652228A9D870042BB9A /* CKAudioProgress */ = {
+			isa = PBXGroup;
+			children = (
+				BC38568C228BBBAB0042BB9A /* Images */,
+				BC385685228A9E0A0042BB9A /* ProgressView */,
+				BC385653228A9D870042BB9A /* AppDelegate.h */,
+				BC385654228A9D870042BB9A /* AppDelegate.m */,
+				BC385656228A9D870042BB9A /* ViewController.h */,
+				BC385657228A9D870042BB9A /* ViewController.m */,
+				BC385659228A9D870042BB9A /* Main.storyboard */,
+				BC38565C228A9D890042BB9A /* Assets.xcassets */,
+				BC38565E228A9D890042BB9A /* LaunchScreen.storyboard */,
+				BC385661228A9D890042BB9A /* Info.plist */,
+				BC385662228A9D890042BB9A /* main.m */,
+			);
+			path = CKAudioProgress;
+			sourceTree = "<group>";
+		};
+		BC38566B228A9D890042BB9A /* CKAudioProgressTests */ = {
+			isa = PBXGroup;
+			children = (
+				BC38566C228A9D890042BB9A /* CKAudioProgressTests.m */,
+				BC38566E228A9D890042BB9A /* Info.plist */,
+			);
+			path = CKAudioProgressTests;
+			sourceTree = "<group>";
+		};
+		BC385676228A9D890042BB9A /* CKAudioProgressUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BC385677228A9D890042BB9A /* CKAudioProgressUITests.m */,
+				BC385679228A9D890042BB9A /* Info.plist */,
+			);
+			path = CKAudioProgressUITests;
+			sourceTree = "<group>";
+		};
+		BC385685228A9E0A0042BB9A /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				BC385686228A9E9C0042BB9A /* CKAudioProgressView.h */,
+				BC385687228A9E9C0042BB9A /* CKAudioProgressView.m */,
+				BC385689228AB0F10042BB9A /* CALayer+CKViewCategory.h */,
+				BC38568A228AB0F10042BB9A /* CALayer+CKViewCategory.m */,
+			);
+			path = ProgressView;
+			sourceTree = "<group>";
+		};
+		BC38568C228BBBAB0042BB9A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BC385690228BBBEC0042BB9A /* audioprogress.gif */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC38564F228A9D870042BB9A /* CKAudioProgress */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC38567C228A9D890042BB9A /* Build configuration list for PBXNativeTarget "CKAudioProgress" */;
+			buildPhases = (
+				BC38564C228A9D870042BB9A /* Sources */,
+				BC38564D228A9D870042BB9A /* Frameworks */,
+				BC38564E228A9D870042BB9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CKAudioProgress;
+			productName = CKAudioProgress;
+			productReference = BC385650228A9D870042BB9A /* CKAudioProgress.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BC385667228A9D890042BB9A /* CKAudioProgressTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC38567F228A9D890042BB9A /* Build configuration list for PBXNativeTarget "CKAudioProgressTests" */;
+			buildPhases = (
+				BC385664228A9D890042BB9A /* Sources */,
+				BC385665228A9D890042BB9A /* Frameworks */,
+				BC385666228A9D890042BB9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC38566A228A9D890042BB9A /* PBXTargetDependency */,
+			);
+			name = CKAudioProgressTests;
+			productName = CKAudioProgressTests;
+			productReference = BC385668228A9D890042BB9A /* CKAudioProgressTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BC385672228A9D890042BB9A /* CKAudioProgressUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC385682228A9D890042BB9A /* Build configuration list for PBXNativeTarget "CKAudioProgressUITests" */;
+			buildPhases = (
+				BC38566F228A9D890042BB9A /* Sources */,
+				BC385670228A9D890042BB9A /* Frameworks */,
+				BC385671228A9D890042BB9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC385675228A9D890042BB9A /* PBXTargetDependency */,
+			);
+			name = CKAudioProgressUITests;
+			productName = CKAudioProgressUITests;
+			productReference = BC385673228A9D890042BB9A /* CKAudioProgressUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC385648228A9D870042BB9A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CK;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = guo;
+				TargetAttributes = {
+					BC38564F228A9D870042BB9A = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					BC385667228A9D890042BB9A = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = BC38564F228A9D870042BB9A;
+					};
+					BC385672228A9D890042BB9A = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = BC38564F228A9D870042BB9A;
+					};
+				};
+			};
+			buildConfigurationList = BC38564B228A9D870042BB9A /* Build configuration list for PBXProject "CKAudioProgress" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BC385647228A9D870042BB9A;
+			productRefGroup = BC385651228A9D870042BB9A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC38564F228A9D870042BB9A /* CKAudioProgress */,
+				BC385667228A9D890042BB9A /* CKAudioProgressTests */,
+				BC385672228A9D890042BB9A /* CKAudioProgressUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC38564E228A9D870042BB9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC385691228BBBEC0042BB9A /* audioprogress.gif in Resources */,
+				BC385660228A9D890042BB9A /* LaunchScreen.storyboard in Resources */,
+				BC38565D228A9D890042BB9A /* Assets.xcassets in Resources */,
+				BC38565B228A9D870042BB9A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC385666228A9D890042BB9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC385671228A9D890042BB9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC38564C228A9D870042BB9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC38568B228AB0F10042BB9A /* CALayer+CKViewCategory.m in Sources */,
+				BC385688228A9E9C0042BB9A /* CKAudioProgressView.m in Sources */,
+				BC385658228A9D870042BB9A /* ViewController.m in Sources */,
+				BC385663228A9D890042BB9A /* main.m in Sources */,
+				BC385655228A9D870042BB9A /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC385664228A9D890042BB9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC38566D228A9D890042BB9A /* CKAudioProgressTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC38566F228A9D890042BB9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC385678228A9D890042BB9A /* CKAudioProgressUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC38566A228A9D890042BB9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC38564F228A9D870042BB9A /* CKAudioProgress */;
+			targetProxy = BC385669228A9D890042BB9A /* PBXContainerItemProxy */;
+		};
+		BC385675228A9D890042BB9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC38564F228A9D870042BB9A /* CKAudioProgress */;
+			targetProxy = BC385674228A9D890042BB9A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BC385659228A9D870042BB9A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC38565A228A9D870042BB9A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BC38565E228A9D890042BB9A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC38565F228A9D890042BB9A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC38567A228A9D890042BB9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BC38567B228A9D890042BB9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC38567D228A9D890042BB9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JAJ87K5LP;
+				INFOPLIST_FILE = CKAudioProgress/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ximalaya.CKAudioProgress;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC38567E228A9D890042BB9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JAJ87K5LP;
+				INFOPLIST_FILE = CKAudioProgress/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ximalaya.CKAudioProgress;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BC385680228A9D890042BB9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JAJ87K5LP;
+				INFOPLIST_FILE = CKAudioProgressTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ximalaya.CKAudioProgressTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CKAudioProgress.app/CKAudioProgress";
+			};
+			name = Debug;
+		};
+		BC385681228A9D890042BB9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JAJ87K5LP;
+				INFOPLIST_FILE = CKAudioProgressTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ximalaya.CKAudioProgressTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CKAudioProgress.app/CKAudioProgress";
+			};
+			name = Release;
+		};
+		BC385683228A9D890042BB9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JAJ87K5LP;
+				INFOPLIST_FILE = CKAudioProgressUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ximalaya.CKAudioProgressUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CKAudioProgress;
+			};
+			name = Debug;
+		};
+		BC385684228A9D890042BB9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JAJ87K5LP;
+				INFOPLIST_FILE = CKAudioProgressUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ximalaya.CKAudioProgressUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CKAudioProgress;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC38564B228A9D870042BB9A /* Build configuration list for PBXProject "CKAudioProgress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC38567A228A9D890042BB9A /* Debug */,
+				BC38567B228A9D890042BB9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC38567C228A9D890042BB9A /* Build configuration list for PBXNativeTarget "CKAudioProgress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC38567D228A9D890042BB9A /* Debug */,
+				BC38567E228A9D890042BB9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC38567F228A9D890042BB9A /* Build configuration list for PBXNativeTarget "CKAudioProgressTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC385680228A9D890042BB9A /* Debug */,
+				BC385681228A9D890042BB9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC385682228A9D890042BB9A /* Build configuration list for PBXNativeTarget "CKAudioProgressUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC385683228A9D890042BB9A /* Debug */,
+				BC385684228A9D890042BB9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC385648228A9D870042BB9A /* Project object */;
+}
