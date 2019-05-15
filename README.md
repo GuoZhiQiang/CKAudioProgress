@@ -38,6 +38,13 @@ CKAudioProgressView *normalP = [[CKAudioProgressView alloc] initWithFrame:CGRect
 CKAudioProgressView *timelineP = [[CKAudioProgressView alloc] initWithFrame:CGRectMake(0, 200, self.view.bounds.size.width, 50) type:CKAudioProgressTypeTimeline];
 ```
 
+#### 3. 从外部改变进度条进度
+
+该组件有个对象方法，接收从外部传递过来的当前播放的进度 `progress`(0-1) 以及总时间 `audioLength` 单位是秒 ：
+```
+- (void)changeTimeLabel:(CGFloat)progress audioLength:(NSInteger)audioLength
+```
+
 ## 可自定义的属性
 
 - `UIColor *cachedBgColor` 该属性表示 缓冲 进度背景颜色
@@ -52,5 +59,8 @@ CKAudioProgressView *timelineP = [[CKAudioProgressView alloc] initWithFrame:CGRe
 - `CGRect slideViewBounds` 拖拽区域(圆点或时间进度)的大小
 
 ## 代理方法
-目前没有提供代理方法，只有 `delegate` 属性，可以自行定义 `delegate` 方法
+目前只提供了一个代理方法，当用户拖拽时，用来返回当前的播放时间和播放进度：
+```
+- (void)seekToTime:(NSInteger)time currentPercent:(CGFloat)percent
+```
 
