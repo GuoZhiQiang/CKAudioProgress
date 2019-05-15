@@ -92,6 +92,9 @@
     if (CKAudioProgressTypeTimeline == self.progressType) {
         [self setProgress:audioProgress total:self.audioLength];
     }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(seekToTime:currentPercent:)]) {
+        [self.delegate seekToTime:audioProgress currentPercent:(CGFloat)_playedLayer.ckWidth/totalWith];
+    }
 }
 
 - (void)setProgress:(NSInteger)progress total:(NSInteger)total {

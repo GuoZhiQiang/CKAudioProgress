@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol CKAudioProgressViewDelegate <NSObject>
 
 @optional
-
+- (void)seekToTime:(NSInteger)time currentPercent:(CGFloat)percent;
 
 @end
 
