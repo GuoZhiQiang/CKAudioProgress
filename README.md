@@ -42,7 +42,7 @@ CKAudioProgressView *timelineP = [[CKAudioProgressView alloc] initWithFrame:CGRe
 
 该组件有个对象方法，接收从外部传递过来的当前播放的进度 `progress`(0-1) 以及总时间 `audioLength` 单位是秒 ：
 ```
-- (void)changeTimeLabel:(CGFloat)progress audioLength:(NSInteger)audioLength
+- (void)updateProgress:(CGFloat)progress audioLength:(NSInteger)audioLength;
 ```
 
 ## 可自定义的属性
@@ -59,8 +59,20 @@ CKAudioProgressView *timelineP = [[CKAudioProgressView alloc] initWithFrame:CGRe
 - `CGRect slideViewBounds` 拖拽区域(圆点或时间进度)的大小
 
 ## 代理方法
-目前只提供了一个代理方法，当用户拖拽时，用来返回当前的播放时间和播放进度：
+当用户拖拽时，用来返回当前的播放时间和播放进度：
+
+1. 用户开始拖拽进度条时，会触发下面代理方法，告知用户开始拖拽： 
 ```
-- (void)seekToTime:(NSInteger)time currentPercent:(CGFloat)percent
+- (void)audioProgressTouchBegin;
+```
+
+2. 用户在拖拽过程中，会触发下面代理方法，返回拖拽的进度：
+```
+- (void)audioProgressTouchMovePercent:(CGFloat)percent;
+```
+
+3. 用户拖拽结束，会触发下面代理方法，返回最终的进度和总时间(如果有)：
+```
+- (void)audioProgresstouchEndhPercent:(CGFloat)percent totalTime:(NSInteger)totalTime;
 ```
 
