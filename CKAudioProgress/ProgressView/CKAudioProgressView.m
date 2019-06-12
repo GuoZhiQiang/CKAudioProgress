@@ -11,6 +11,7 @@
 
 @interface CKAudioProgressView()
 
+@property (nonatomic, assign) BOOL    isSliding;
 @property (nonatomic, assign) NSInteger audioLength;
 
 @property (nonatomic, strong) UIView  *slideView;
@@ -70,30 +71,48 @@
 }
 
 #pragma mark - Action
-
+static CGFloat percent = 0.0;
 - (void)panGesture:(UIPanGestureRecognizer *)gesture {
-    CGPoint translation = [gesture translationInView:self];
-    CGPoint slideViewCenter = CGPointMake(gesture.view.center.x+ translation.x, gesture.view.center.y);
-    if (CKAudioProgressTypeNormal == self.progressType) {
-        slideViewCenter.x = MAX(_dotLayer.bounds.size.width/2, slideViewCenter.x);
-        slideViewCenter.x = MIN(self.bounds.size.width-_dotLayer.bounds.size.width/2, slideViewCenter.x);
-    }
-    else {
-        slideViewCenter.x = MAX(gesture.view.bounds.size.width/2, slideViewCenter.x);
-        slideViewCenter.x = MIN(self.bounds.size.width-gesture.view.bounds.size.width/2, slideViewCenter.x);
-    }
-    gesture.view.center = slideViewCenter;
-    [gesture setTranslation:CGPointZero inView:self];
     
-    _playedLayer.ckWidth = CKAudioProgressTypeNormal == self.progressType ? gesture.view.frame.origin.x+(_slideView.bounds.size.width/2-_dotLayer.bounds.size.width/2) : gesture.view.frame.origin.x;
-    
-    CGFloat totalWith = CKAudioProgressTypeTimeline == self.progressType ? self.bounds.size.width-_lb_time.bounds.size.width : self.bounds.size.width-_dotLayer.bounds.size.width;
-    NSInteger audioProgress = _playedLayer.ckWidth/totalWith*self.audioLength;
-    if (CKAudioProgressTypeTimeline == self.progressType) {
-        [self setProgress:audioProgress total:self.audioLength];
+    UIGestureRecognizerState state = gesture.state;
+    if (UIGestureRecognizerStateBegan == state) {
+        _isSliding = YES;
+        percent = 0.0;
+        if (_delegate && [_delegate respondsToSelector:@selector(audioProgressTouchBegin)]) {
+            [_delegate audioProgressTouchBegin];
+        }
     }
-    if (self.delegate && [self.delegate respondsToSelector:@selector(seekToTime:currentPercent:)]) {
-        [self.delegate seekToTime:audioProgress currentPercent:(CGFloat)_playedLayer.ckWidth/totalWith];
+    else if (UIGestureRecognizerStateChanged == state) {
+        CGPoint translation = [gesture translationInView:self];
+        CGPoint slideViewCenter = CGPointMake(gesture.view.center.x+ translation.x, gesture.view.center.y);
+        if (CKAudioProgressTypeNormal == self.progressType) {
+            slideViewCenter.x = MAX(_dotLayer.bounds.size.width/2, slideViewCenter.x);
+            slideViewCenter.x = MIN(self.bounds.size.width-_dotLayer.bounds.size.width/2, slideViewCenter.x);
+        }
+        else {
+            slideViewCenter.x = MAX(gesture.view.bounds.size.width/2, slideViewCenter.x);
+            slideViewCenter.x = MIN(self.bounds.size.width-gesture.view.bounds.size.width/2, slideViewCenter.x);
+        }
+        gesture.view.center = slideViewCenter;
+        [gesture setTranslation:CGPointZero inView:self];
+        
+        _playedLayer.ckWidth = CKAudioProgressTypeNormal == self.progressType ? gesture.view.frame.origin.x+(_slideView.bounds.size.width/2-_dotLayer.bounds.size.width/2) : gesture.view.frame.origin.x;
+        
+        CGFloat totalWith = CKAudioProgressTypeTimeline == self.progressType ? self.bounds.size.width-_lb_time.bounds.size.width : self.bounds.size.width-_dotLayer.bounds.size.width;
+        NSInteger audioProgress = _playedLayer.ckWidth/totalWith*self.audioLength;
+        if (CKAudioProgressTypeTimeline == self.progressType) {
+            [self setProgress:audioProgress total:self.audioLength];
+        }
+        if (_delegate && [_delegate respondsToSelector:@selector(audioProgressTouchMovePercent:)]) {
+            [_delegate audioProgressTouchMovePercent:percent];
+        }
+    }
+    else if (UIGestureRecognizerStateEnded == state ||
+             UIGestureRecognizerStateCancelled == state) {
+        _isSliding = NO;
+        if (_delegate && [_delegate respondsToSelector:@selector(audioProgresstouchEndhPercent:totalTime:)]) {
+            [_delegate audioProgresstouchEndhPercent:percent totalTime:self.audioLength];
+        }
     }
 }
 
@@ -102,26 +121,28 @@
     _lb_time.text = title;
 }
 
-- (void)changeTimeLabel:(CGFloat)percent audioLength:(NSInteger)audioLength {
+- (void)updateProgress:(CGFloat)progress audioLength:(NSInteger)audioLength {
     if (isnan(percent) || isinf(percent)) {
         percent = 0;
     }
     if (audioLength <= 0) {
         return;
     }
-    self.audioLength = audioLength;
-    
-    [self setProgress:(NSInteger)(percent*audioLength) total:audioLength];
-    
-    CGFloat totalWith = CKAudioProgressTypeTimeline == self.progressType ? self.bounds.size.width-_lb_time.bounds.size.width : self.bounds.size.width-_dotLayer.bounds.size.width;
-    CGFloat playedWidth = totalWith*percent;
-    _playedLayer.ckWidth = playedWidth;
-    
-    if (CKAudioProgressTypeTimeline == self.progressType) {
-        _lb_time.ckCenterX = playedWidth+_lb_time.bounds.size.width/2;
-    }
-    else {
-        _slideView.ckCenterX = playedWidth+_dotLayer.bounds.size.width/2;
+    if (!_isSliding) {
+        
+        self.audioLength = audioLength;
+        [self setProgress:(NSInteger)(percent*audioLength) total:audioLength];
+        
+        CGFloat totalWith = CKAudioProgressTypeTimeline == self.progressType ? self.bounds.size.width-_lb_time.bounds.size.width : self.bounds.size.width-_dotLayer.bounds.size.width;
+        CGFloat playedWidth  = totalWith*percent;
+        _playedLayer.ckWidth = playedWidth;
+        
+        if (CKAudioProgressTypeTimeline == self.progressType) {
+            _lb_time.ckCenterX = playedWidth+_lb_time.bounds.size.width/2;
+        }
+        else {
+            _slideView.ckCenterX = playedWidth+_dotLayer.bounds.size.width/2;
+        }
     }
 }
 
@@ -178,7 +199,7 @@
 - (CALayer *)bgLayer {
     if (!_bgLayer) {
         _bgLayer = [CALayer layer];
-        _bgLayer.backgroundColor = _progressBgColor ? _progressBgColor.CGColor : [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5].CGColor;
+        _bgLayer.backgroundColor = _progressBgColor ? _progressBgColor.CGColor : [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1].CGColor;
         _bgLayer.frame = CGRectMake(0, (self.bounds.size.height-2)/2, self.bounds.size.width, 2);
     }
     return _bgLayer;
@@ -237,7 +258,7 @@
         _lb_time.layer.shadowOffset = CGSizeMake(0,0);
         _lb_time.layer.shadowOpacity = 1;
         _lb_time.layer.shadowRadius = 6;
-        _lb_time.layer.backgroundColor = [UIColor colorWithRed:56/255.0 green:59/255.0 blue:70/255.0 alpha:1.0].CGColor;
+        _lb_time.layer.backgroundColor = [UIColor colorWithRed:66/255.0 green:72/255.0 blue:93/255.0 alpha:1.0].CGColor;
         UIPanGestureRecognizer *panGes = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
         _lb_time.userInteractionEnabled = YES;
         [_lb_time addGestureRecognizer:panGes];

@@ -13,8 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol CKAudioProgressViewDelegate <NSObject>
 
 @optional
-- (void)seekToTime:(NSInteger)time currentPercent:(CGFloat)percent;
-
+- (void)audioProgressTouchBegin;
+- (void)audioProgressTouchMovePercent:(CGFloat)percent;
+- (void)audioProgresstouchEndhPercent:(CGFloat)percent totalTime:(NSInteger)totalTime;
 @end
 
 typedef NS_ENUM(NSInteger, CKAudioProgressType) {
@@ -43,7 +44,12 @@ typedef NS_ENUM(NSInteger, CKAudioProgressType) {
 @property (nonatomic, weak  ) id<CKAudioProgressViewDelegate> delegate;
 
 - (instancetype)initWithFrame:(CGRect)frame type:(CKAudioProgressType)progressType;
-- (void)changeTimeLabel:(CGFloat)progress audioLength:(NSInteger)audioLength;
+/**
+ @note 修改当前进度，可以根据后面参数计算出当前播放时长并显示在时间lable上
+ @param progress 进度百分比
+ @param audioLength 总时间
+ */
+- (void)updateProgress:(CGFloat)progress audioLength:(NSInteger)audioLength;
 @end
 
 NS_ASSUME_NONNULL_END
