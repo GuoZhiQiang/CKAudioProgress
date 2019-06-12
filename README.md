@@ -49,11 +49,12 @@ CKAudioProgressView *timelineP = [[CKAudioProgressView alloc] initWithFrame:CGRe
 
 - `UIColor *cachedBgColor` 该属性表示 缓冲 进度背景颜色
 - `UIColor *progressBgColor` 该属性表示 进度条 默认填充背景色
-- `NSArray *colors`
->已经播放的进度条渐变色, 存储 CGColorRef 对象的数组 *注意: 该属性和 playedBgColor 二选一
 
-- `UIColor *playedBgColor`
+>已经播放的进度条渐变色, 存储 CGColorRef 对象的数组 *注意: 该属性和 playedBgColor 二选一
+- `NSArray *colors`
+
 >已经播放的进度条背景颜色 *注意 该属性和colors 二选一
+- `UIColor *playedBgColor`
 
 - `CGFloat cornerRadius` 进度条的 `cornerRadius`
 - `CGRect slideViewBounds` 拖拽区域(圆点或时间进度)的大小
